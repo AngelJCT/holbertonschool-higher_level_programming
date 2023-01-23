@@ -4,5 +4,6 @@ def element_at(my_list, idx):
         return None
     if idx > len(my_list):
         return None
-    element_index = my_list.index(idx)
-    return element_index
+    for i in range(len(my_list)):
+        if my_list[i] == my_list[idx]:
+            return my_list[i]
