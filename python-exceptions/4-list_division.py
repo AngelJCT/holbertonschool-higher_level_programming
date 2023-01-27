@@ -5,7 +5,7 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             if i >= len(my_list_1) or i >= len(my_list_2):
                 raise IndexError
-            elif not (isinstance(my_list_1[i], (int, float)) and isinstance(my_list_1[i], (int, float))):
+            elif not (isinstance(my_list_1[i], int) and isinstance(my_list_1[i], int)):
                 raise TypeError
             elif my_list_2[i] == 0:
                 raise ZeroDivisionError
