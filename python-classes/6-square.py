@@ -7,8 +7,8 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """This method initializes the class Square"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -31,7 +31,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """This function set the value"""
+        """This function set the value of position"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(i, int) for i in value) or
