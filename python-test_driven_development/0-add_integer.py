@@ -9,10 +9,10 @@ def add_integer(a, b=98):
         b (int):
     Returns:
         The sum of a and b
-    
+
     Raises:
         TypeError: If a or b is not an integer
-    
+
     >>> add_integer(1, 2)
     3
     >>> add_integer(100, -2)
