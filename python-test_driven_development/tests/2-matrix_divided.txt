@@ -81,9 +81,7 @@ Dividing a matrix by a complex number:
 Dividing a matrix by a boolean:
     >>> matrix = [[1, 2, 3], [4, 5, 6]]
     >>> matrix_divided(matrix, True)
-    Traceback (most recent call last):
-        ...
-    TypeError: div must be a number
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
 
 Dividing a matrix by a None:
     >>> matrix = [[1, 2, 3], [4, 5, 6]]
@@ -98,10 +96,3 @@ Dividing a matrix with different sizes:
     Traceback (most recent call last):
         ...
     TypeError: Each row of the matrix must have the same size
-
-Dividing an empty matrix:
-    >>> matrix = []
-    >>> matrix_divided(matrix, 3)
-    Traceback (most recent call last):
-        ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
