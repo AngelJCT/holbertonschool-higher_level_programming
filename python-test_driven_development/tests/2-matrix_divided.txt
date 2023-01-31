@@ -1,0 +1,107 @@
+The ``2-matrix_divided`` module
+================================
+
+Using ``matrix_divided`` function
+---------------------------------
+
+importing the ``matrix_divided`` function:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Dividing a matrix by 3:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Dividing a matrix by 3.5:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3.5)
+    [[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
+
+Dividing a matrix by 0:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "2-matrix_divided.py", line 11, in matrix_divided
+        raise ZeroDivisionError("division by zero")
+    ZeroDivisionError: division by zero
+
+Dividing a matrix by a string:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, "H")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a tuple:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, (1, 2))
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a list:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, [1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a dictionary:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, {'1': 1})
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a set:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, {1, 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a float:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3.0)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Dividing a matrix by a negative number:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, -3)
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Dividing a matrix by a complex number:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3 + 2j)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a boolean:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, True)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix by a None:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+Dividing a matrix with different sizes:
+    >>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+Dividing an empty matrix:
+    >>> matrix = []
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
