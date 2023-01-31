@@ -1,13 +1,11 @@
-"""
-Given two integers, return the sum.
+The ``0-add_integer`` module
+============================
 
-:param a: first integer
-:param b: second integer
-:return: sum of a and b
+Using the ``add_integer`` function
+----------------------------------
 
-
-def add_integer(a, b=98):
-    return a + b
+importing the ``add_integer`` function:
+    >>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(1, 2)
 3
@@ -69,4 +67,3 @@ TypeError: a must be an integer
 2
 >>> add_integer(-3, -3)
 -6
-"""
