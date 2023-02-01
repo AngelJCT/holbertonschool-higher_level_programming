@@ -19,5 +19,6 @@ def say_my_name(first_name, last_name=""):
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
     if len(first_name) == 0 and len(last_name) == 0:
-        raise TypeError("say_my_name() missing 1 required positional argument: 'first_name'")
+        raise TypeError("say_my_name() missing 1 required positional \
+            argument: 'first_name'")
     print(f"My name is {first_name} {last_name}")
