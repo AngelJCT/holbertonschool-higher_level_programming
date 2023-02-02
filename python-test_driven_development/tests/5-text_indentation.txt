@@ -51,3 +51,8 @@ Using ``text_indentation`` function:
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
+
+Using ``text_indentation`` function:
+    >>> text_indentation("Hello my name is Angel.")
+    Hello my name is Angel.
+    <BLANKLINE>
