@@ -141,3 +141,8 @@ TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 Traceback (most recent call last):
     ...
 TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+>>> add_integer(420e10**40069, 2147483647)
+Traceback (most recent call last):
+    ...
+OverflowError: (34, 'Result too large')
