@@ -33,3 +33,21 @@ Using ``text_indentation`` function:
     Traceback (most recent call last):
         ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Using ``text_indentation`` function:
+    >>> text_indentation((1, 2, 3))
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Using ``text_indentation`` function:
+    >>> text_indentation({'1': 3, '2': 4})
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Using ``text_indentation`` function:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
