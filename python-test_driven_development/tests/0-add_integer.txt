@@ -146,3 +146,13 @@ TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
 Traceback (most recent call last):
     ...
 OverflowError: (34, 'Result too large')
+
+>>> add_integer(10, 5a)
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid decimal literal
+
+>>> add_integer(10, 5.5.5)
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
