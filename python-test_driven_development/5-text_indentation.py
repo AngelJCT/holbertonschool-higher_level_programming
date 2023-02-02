@@ -18,9 +18,6 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    if len(text) == 0:
-        raise TypeError("text_indentation() missing 1 \
-            required positionalargument: 'text'")
     for i in range(len(text)):
         if text[i] in ['.', '?', ':']:
             print(text[i])
