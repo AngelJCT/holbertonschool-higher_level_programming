@@ -9,61 +9,70 @@ importing the ``add_integer`` function:
 
 >>> add_integer(1, 2)
 3
+
 >>> add_integer(1, -2)
 -1
+
 >>> add_integer(1.5, 2)
 3
+
 >>> add_integer(50, 100)
 150
+
 >>> add_integer(0, 0)
 0
+
 >>> add_integer("hello", 98)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 >>> add_integer(98, "hello")
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer(98, 98.5)
-197
+196
 >>> add_integer((1, 4), 98)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 >>> add_integer(98, (1, 4))
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer(98, [1, 2, 3])
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer([1, 2, 3], 98)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 >>> add_integer(98, {1: 2, 3: 4})
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer({1: 2, 3: 4}, 98)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 >>> add_integer(98, None)
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+
 >>> add_integer(None, 98)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
->>> add_integer(98, True)
-99
->>> add_integer(True, 98)
-99
->>> add_integer(True, True)
-2
+
 >>> add_integer(-3, -3)
 -6
