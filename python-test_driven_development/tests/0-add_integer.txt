@@ -156,3 +156,8 @@ SyntaxError: invalid decimal literal
 Traceback (most recent call last):
     ...
 SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+>>> add_integer(10, -5r)
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid syntax.
