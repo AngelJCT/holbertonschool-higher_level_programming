@@ -56,3 +56,6 @@ Using ``text_indentation`` function:
     >>> text_indentation("Hello my name is Angel.")
     Hello my name is Angel.
     <BLANKLINE>
+
+Using ``text_indentation`` function:
+    >>> text_indentation("")
