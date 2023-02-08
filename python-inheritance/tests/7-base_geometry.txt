@@ -1,72 +1,75 @@
 The ``7-base_geometry`` module
 ================================
 
-Using ``integer_validator`` function
+Using ``BaseGeometry`` class
 ---------------------------------
 
 importing the ``BaseGeometry`` class:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-    >>> bg = BaseGeometry()
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
-    
-    try:
-        bg.integer_validator("name", "John")
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-    
-    try:
-        bg.integer_validator("old_age", -3)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
 
-    try:
-        bg.integer_validator("number", None)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+trying
+    >>> BaseGeometry.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
     
-    try:
-        bg.integer_validator("age", True)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+trying
+    >>> BaseGeometry.integer_validator("age", -3)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+trying
+    >>> BaseGeometry.integer_validator("age", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
     
-    try:
-        bg.integer_validator("age", [3])
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator("age", (1,))
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator("age", {1, 2})
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator()
-    except Exception:
-        print("No arguments")
-
-    try:
-        bg.integer_validator("age")
-    except Exception:
-        print("Missing value")
-
-    try:
-        bg.integer_validator("age", 3, 4)
-    except Exception:
-        print("Too many arguments")
+trying
+    >>> BaseGeometry.integer_validator("age", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
     
-    try:
-        bg.integer_validator("age", "3")
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+trying
+    >>> BaseGeometry.integer_validator("age", [3])
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+trying
+    >>> BaseGeometry.integer_validator("age", (1,))
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+trying
+    >>> BaseGeometry.integer_validator("age", {1, 2})
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+trying
+    >>> BaseGeometry.integer_validator()
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+trying
+    >>> BaseGeometry.integer_validator("age")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
     
-    try:
-        print(bg.area())
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
+trying
+    >>> BaseGeometry.integer_validator("age", "3")
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+    
+trying
+    >>> BaseGeometry.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
