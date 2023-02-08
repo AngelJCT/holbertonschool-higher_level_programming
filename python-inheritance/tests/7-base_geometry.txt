@@ -77,3 +77,14 @@ trying
     Traceback (most recent call last):
         ...
     Exception: area() is not implemented
+
+trying
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", 1)
+
+trying
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
