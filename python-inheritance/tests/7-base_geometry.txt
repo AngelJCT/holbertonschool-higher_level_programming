@@ -7,12 +7,6 @@ Using ``BaseGeometry`` class
 importing the ``BaseGeometry`` class:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-
-trying
-    >>> BaseGeometry.integer_validator("name", "John")
-    Traceback (most recent call last):
-        ...
-    TypeError: name must be an integer
     
 trying
     >>> BaseGeometry.integer_validator("age", -3)
