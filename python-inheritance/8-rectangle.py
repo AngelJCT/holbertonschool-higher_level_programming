@@ -2,15 +2,14 @@
 """Module 7-base_geometry"""
 
 
-class BaseGeometry():
-    """Empty class"""
-
+class BaseGeometry:
+    """Class BaseGeometry"""
     def area(self):
-        """Method to raise an exception"""
+        """Function to calculate the area of a shape"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Method to validate value"""
+        """Function to validate the value of a shape"""
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
@@ -24,16 +23,5 @@ class Rectangle(BaseGeometry):
         """Instantiation with width and height"""
         self.__width = width
         self.__height = height
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
-    def area(self):
-        """Method to raise an exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Method to validate value"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
