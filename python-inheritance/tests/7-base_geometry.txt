@@ -12,7 +12,7 @@ importing the ``BaseGeometry`` class:
     >>> bg.integer_validator("width", 89)
     
     try:
-        bg.integer_validator("first_name", "John")
+        bg.integer_validator("name", "John")
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
     
@@ -22,9 +22,44 @@ importing the ``BaseGeometry`` class:
         print("[{}] {}".format(e.__class__.__name__, e))
 
     try:
-        bg.integer_validator("number", 3.14)
+        bg.integer_validator("number", None)
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
+    
+    try:
+        bg.integer_validator("age", True)
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+    
+    try:
+        bg.integer_validator("age", [3])
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        bg.integer_validator("age", (1,))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        bg.integer_validator("age", {1, 2})
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
+
+    try:
+        bg.integer_validator()
+    except Exception:
+        print("No arguments")
+
+    try:
+        bg.integer_validator("age")
+    except Exception:
+        print("Missing value")
+
+    try:
+        bg.integer_validator("age", 3, 4)
+    except Exception:
+        print("Too many arguments")
     
     try:
         bg.integer_validator("age", "3")
@@ -32,21 +67,6 @@ importing the ``BaseGeometry`` class:
         print("[{}] {}".format(e.__class__.__name__, e))
     
     try:
-        bg.integer_validator((1, 2), 3)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator([1, 2, 3], 5)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator({'1': 3, '5': 10}, 3.14)
-    except Exception as e:
-        print("[{}] {}".format(e.__class__.__name__, e))
-
-    try:
-        bg.integer_validator()
+        print(bg.area())
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
