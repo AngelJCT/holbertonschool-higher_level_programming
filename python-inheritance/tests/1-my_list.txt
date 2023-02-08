@@ -58,3 +58,23 @@ creating a ``MyList`` object:
 printing the list:
     >>> my_list.print_sorted()
     [8, 12, 15, 18, 20, 25, 35]
+
+creating a ``MyList`` object:
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(5)
+    >>> my_list.append(3)
+    >>> my_list.append(10)
+    >>> my_list.append(-4)
+
+printing the list:
+    >>> my_list.print_sorted()
+    [-4, 2, 3, 4, 5, 10]
+
+creating a ``MyList`` object:
+    >>> my_list = MyList()
+
+printing the list:
+    >>> my_list.print_sorted()
+    []
