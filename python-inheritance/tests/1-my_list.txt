@@ -1,11 +1,11 @@
 The ``1-my_list`` module
 ================================
 
-Using ``MyList`` class
+Using ``printed_sorted`` method
 ---------------------------------
 
 importing the ``MyList`` class:
-    >>> MyList = __import__('1-my_list').MyList.printed_sorted
+    >>> MyList = __import__('1-my_list').MyList
 
 creating a ``MyList`` object:
     >>> my_list = MyList()
@@ -42,7 +42,7 @@ creating a ``MyList`` object:
     >>> my_list.append(10)
 
 printing the list:
-    >>> my_list.printed_sorted()
+    >>> my_List.printed_sorted()
     [10, 20, 30, 40, 50]
 
 creating a ``MyList`` object:
