@@ -1,7 +1,7 @@
 The ``1-my_list`` module
 ================================
 
-Using ``printed_sorted`` method
+Using ``print_sorted`` function
 ---------------------------------
 
 importing the ``MyList`` class:
@@ -16,7 +16,7 @@ creating a ``MyList`` object:
     >>> my_list.append(4)
 
 printing the list:
-    >>> my_list.printed_sorted()
+    >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
 
 creating a ``MyList`` object:
@@ -30,7 +30,7 @@ creating a ``MyList`` object:
     >>> my_list.append(10)
 
 printing the list:
-    >>> my_list.printed_sorted()
+    >>> my_list.print_sorted()
     [1, 3, 5, 7, 8, 9, 10]
 
 creating a ``MyList`` object:
@@ -42,7 +42,7 @@ creating a ``MyList`` object:
     >>> my_list.append(10)
 
 printing the list:
-    >>> my_List.printed_sorted()
+    >>> my_list.print_sorted()
     [10, 20, 30, 40, 50]
 
 creating a ``MyList`` object:
@@ -56,5 +56,5 @@ creating a ``MyList`` object:
     >>> my_list.append(8)
 
 printing the list:
-    >>> my_list.printed_sorted()
+    >>> my_list.print_sorted()
     [8, 12, 15, 18, 20, 25, 35]
