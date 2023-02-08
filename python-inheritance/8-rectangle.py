@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 7-base_geometry"""
+"""Module 8-recangle"""
 
 
 class BaseGeometry:
@@ -18,7 +18,6 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """Subclass derived from BaseGeometry"""
-
     def __init__(self, width, height):
         """Instantiation with width and height"""
         self.__width = width
