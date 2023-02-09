@@ -2,19 +2,7 @@
 """Module 8-recangle"""
 
 
-class BaseGeometry:
-    """Class BaseGeometry"""
-    def area(self):
-        """Function to calculate the area of a shape"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Function to validate the value of a shape"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Subclass derived from BaseGeometry"""
