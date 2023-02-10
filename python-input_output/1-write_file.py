@@ -4,5 +4,6 @@
 
 def write_file(filename="", text=""):
     """Function to write text to a file"""
-    with open(filename, mode='w', encoding='utf-8') as file:
-        file.write(text)
+    with open(filename, "w", encoding='utf-8') as my_file:
+        my_file.write(text)
+        return len(text)
