@@ -95,3 +95,13 @@ class Rectangle(Base):
         """Print Rectangle with #"""
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """Print Rectangle description"""
+        rec = "Rectangle"
+        id1 = self.id
+        y1 = self.__y
+        x1 = self.__x
+        w1 = self.__width
+        h1 = self.__height
+        return (f"[{rec}] ({id1}) {x1}/{y1} - {w1}/{h1}")
