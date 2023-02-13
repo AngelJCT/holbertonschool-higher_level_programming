@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""Module rectangle"""
+"""Module Rectangle that inherits from Base"""
 
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
     """Class Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor"""
         self.__width = width
@@ -19,7 +20,7 @@ class Rectangle(Base):
         """Getter for width"""
         return self.__width
 
-    width.setter
+    @width.setter
     def width(self, value):
         """Setter for width"""
         self.__width = value
@@ -29,7 +30,7 @@ class Rectangle(Base):
         """Getter for height"""
         return self.__height
 
-    height.setter
+    @height.setter
 
     def height(self, value):
         """Setter for height"""
@@ -40,7 +41,7 @@ class Rectangle(Base):
         """Getter for x"""
         return self.__x
 
-    x.setter
+    @x.setter
     def x(self, value):
         """Setter for x"""
         self.__x = value
@@ -50,7 +51,7 @@ class Rectangle(Base):
         """Getter for y"""
         return self.__y
 
-    y.setter
+    @y.setter
     def y(self, value):
         """Setter for y"""
         self.__y = value
