@@ -111,3 +111,20 @@ class Rectangle(Base):
         w1 = self.__width
         h1 = self.__height
         return (f"[{rec}] ({id1}) {x1}/{y1} - {w1}/{h1}")
+
+    def update(self, *args):
+        """Assign an argument to each attribute"""
+        for i, arg in enumerate(args):
+            if i == 0:
+                self.id = arg
+            elif i == 1:
+                self.__width = arg
+            elif i == 2:
+                self.__height = arg
+            elif i == 3:
+                self.__x = arg
+            elif i == 4:
+                self.__y = arg
+            else:
+                break
+        return arg
