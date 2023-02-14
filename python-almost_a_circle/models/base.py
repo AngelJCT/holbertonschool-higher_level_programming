@@ -49,7 +49,7 @@ class Base:
 
     def update(self, *args, **kwargs):
         """Update the instance attributes"""
-        attributes = ['id', 'width', 'height', 'x', 'y']
+        attributes = ['id', 'width', 'height', 'size', 'x', 'y']
         if args:
             for i, arg in enumerate(args):
                 setattr(self, attributes[i], arg)
