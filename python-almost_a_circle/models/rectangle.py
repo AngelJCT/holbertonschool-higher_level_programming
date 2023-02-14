@@ -134,3 +134,7 @@ class Rectangle(Base):
                 if hasattr(self, k):
                     setattr(self, k, v)
             return v
+
+    def to_dictionary(self):
+        """Returns the dictionary representation"""
+        return self.__dict__
