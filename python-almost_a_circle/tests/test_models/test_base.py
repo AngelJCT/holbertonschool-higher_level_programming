@@ -16,17 +16,17 @@ class TestBase(unittest.TestCase):
         """Set up for test cases"""
         Base._Base__nb_objects = 0
 
-    def test_init_without_id(self):
+    def test_id_none(self):
         """Test case for initialization without id"""
         b1 = Base()
         self.assertEqual(b1.id, 1)
 
-    def test_init_with_id(self):
+    def test_id(self):
         """Test case for initialization with id"""
         b2 = Base(40)
         self.assertEqual(b2.id, 40)
 
-    def test_without_id_and_increment(self):
+    def test_nb_objects(self):
         """Test case for initialization without id and increment"""
         b1 = Base()
         b2 = Base()
@@ -34,15 +34,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 3)
-
-    def test_nb_objects(self):
-        """Test case for nb_objects"""
-        initial_nb_objects = Base._Base__nb_objects
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        final_nb_objects = Base._Base__nb_objects
-        self.assertEqual(final_nb_objects, initial_nb_objects + 3)
 
     def test_to_json_string_none(self):
         """Test case for to_json_string with None"""
