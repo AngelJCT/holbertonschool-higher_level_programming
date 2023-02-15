@@ -59,6 +59,12 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), "[]")
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_create_rectangle(self):
         """Test case for create"""
@@ -68,7 +74,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1 == r2, False)
         self.assertEqual(r1 is r2, False)
         self.assertNotEqual(r1, r2)
-        
 
 
 if __name__ == '__main__':
