@@ -3,6 +3,7 @@
 
 
 import json
+from os import path
 
 
 class Base:
@@ -59,3 +60,12 @@ class Base:
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances"""
+        if not path.exists(f"{cls.__name__}.json"):
+            return []
+        with open(f"{cls.__name__}.json", 'r', encoding='utf-8') as f:
+            lff = [cls.create(**obj) for obj in cls.from_json_string(f.read())]
+            return lff
