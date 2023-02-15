@@ -75,6 +75,26 @@ class TestBase(unittest.TestCase):
         self.assertEqual(r1 is r2, False)
         self.assertNotEqual(r1, r2)
 
+    def test_create_square(self):
+        """test case for creating a square"""
+        sqr1 = Square(5)
+        dictionary = sqr1.to_dictionary()
+        sqr2 = Square.create(**dictionary)
+        self.assertEqual(sqr1 == sqr2, False)
+        self.assertEqual(sqr1 is sqr2, False)
+        self.assertNotEqual(sqr1, sqr2)
+
+    def test_from_json_string(self):
+        """Test case for from_jason_string"""
+        json_list = '[{"x": 2, "y": 8, "id": 1, "width": 10, "height": 7}]'
+        list_objs = Base.from_json_string(json_list)
+        self.assertEqual(len(list_objs), 1)
+
+    def test_from_json_string_none(self):
+        """Test case for from_json_string with none as argument"""
+        list_objs = Base.from_json_string(None)
+        self.assertEqual(list_objs, [])
+
 
 if __name__ == '__main__':
     unittest.main()
