@@ -8,17 +8,15 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """Test cases for Base class"""
 
-    def test_init_with_id(self):
+    def test_init_withouth_id(self):
         """Test case for initialization with id"""
-        b1 = Base(40)
-        self.assertEqual(b1.id, 40)
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
 
-    def test_init_id_none(self):
+    def test_init_with_id(self):
         """Test case for initialization without id"""
-        b2 = Base()
-        self.assertEqual(b2.id, 2)
-        b3 = Base()
-        self.assertEqual(b3.id, 3)
+        b2 = Base(40)
+        self.assertEqual(b2.id, 40)
 
     def test_nb_objects(self):
         """Test case for nb_objects"""
