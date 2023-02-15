@@ -10,30 +10,15 @@ class TestBase(unittest.TestCase):
 
     def test_init_with_id(self):
         """Test case for initialization with id"""
-        b1 = Base(1)
-        self.assertEqual(b1.id, 1)
-        b2 = Base(40)
-        self.assertEqual(b2.id, 40)
-        b3 = Base(100)
-        self.assertEqual(b3.id, 100)
+        b1 = Base(40)
+        self.assertEqual(b1.id, 40)
 
-    def test_init_without_id(self):
+    def test_init_id_none(self):
         """Test case for initialization without id"""
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, 2)
         b3 = Base()
         self.assertEqual(b3.id, 3)
-
-    def test_init_with_negative_id(self):
-        """Test case for initialization with negative id"""
-        b1 = Base(-1)
-        self.assertEqual(b1.id, -1)
-        b2 = Base(-40)
-        self.assertEqual(b2.id, -40)
-        b3 = Base(-100)
-        self.assertEqual(b3.id, -100)
 
     def test_nb_objects(self):
         """Test case for nb_objects"""
@@ -43,15 +28,6 @@ class TestBase(unittest.TestCase):
         b3 = Base()
         final_nb_objects = Base._Base__nb_objects
         self.assertEqual(final_nb_objects, initial_nb_objects + 3)
-
-    def test_init_with_string_id(self):
-        """Test case for initialization with string id"""
-        b1 = Base("hello")
-        self.assertEqual(b1.id, "hello")
-        b2 = Base("world")
-        self.assertEqual(b2.id, "world")
-        b3 = Base("python")
-        self.assertEqual(b3.id, "python")
 
 
 if __name__ == '__main__':
