@@ -12,6 +12,10 @@ import os
 class TestBase(unittest.TestCase):
     """Test cases for Base class"""
 
+    def setUp(self):
+        """Set up for test cases"""
+        Base._Base__nb_objects = 0
+
     def test_init_without_id(self):
         """Test case for initialization without id"""
         b1 = Base()
@@ -27,9 +31,9 @@ class TestBase(unittest.TestCase):
         b1 = Base()
         b2 = Base()
         b3 = Base()
-        self.assertEqual(b1.id, 8)
-        self.assertEqual(b2.id, 9)
-        self.assertEqual(b3.id, 10)
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 3)
 
     def test_nb_objects(self):
         """Test case for nb_objects"""
@@ -49,7 +53,7 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, '[{"id": 7, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(json_dictionary, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
     def test_save_to_file_none(self):
         """Test case for save_to_file with None"""
@@ -63,7 +67,7 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as f:
-            self.assertEqual(f.read(), '[{"id": 5, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 6, "width": 2, "height": 4, "x": 0, "y": 0}]')
+            self.assertEqual(f.read(), '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]')
 
 
 if __name__ == '__main__':
