@@ -2,6 +2,8 @@
 """Unittest for Rectangle class"""
 
 import unittest
+from unittest.mock import patch
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -57,6 +59,14 @@ class TestRectangle(unittest.TestCase):
         """Test case for __str__ method"""
         r1 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r1.__str__(), "[Rectangle] (5) 3/4 - 1/2")
+
+    def test_display(self):
+        """Test case for display method"""
+        rect = Rectangle(3, 2, 1, 1)
+        expected_output = "\n ###\n ###\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rect.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
 
 
 if __name__ == "__main__":
