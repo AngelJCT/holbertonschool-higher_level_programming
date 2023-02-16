@@ -45,12 +45,19 @@ class TestBase(unittest.TestCase):
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(json_dictionary, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        s1 = Square(5)
+        dictionary = s1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(json_dictionary, '[{"id": 2, "size": 5, "x": 0, "y": 0}]')
 
     def test_save_to_file_none(self):
         """Test case for save_to_file with None"""
         Base.save_to_file(None)
         with open("Base.json", "r") as f:
             self.assertEqual(f.read(), "[]")
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_save_to_file(self):
         """Test case for save_to_file"""
