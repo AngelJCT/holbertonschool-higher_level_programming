@@ -95,6 +95,21 @@ class TestBase(unittest.TestCase):
         list_objs = Base.from_json_string(None)
         self.assertEqual(list_objs, [])
 
+    def test_load_from_file(self):
+        """Test case for load_from_file"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        list_rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(list_rectangles), 2)
+        self.assertEqual(list_rectangles[0].id, 1)
+        Rectangle.save_to_file(None)
+        list_rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(list_rectangles), 0)
+        Rectangle.save_to_file([])
+        list_rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(list_rectangles), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
