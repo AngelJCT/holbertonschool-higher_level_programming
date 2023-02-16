@@ -78,6 +78,12 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(f.read(), '[]')
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
+            self.assertEqual(f.read(), '[]')
+        Base.save_to_file([])
+        with open("Base.json", "r") as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_create_rectangle(self):
         """Test case for creating a rectangle"""
