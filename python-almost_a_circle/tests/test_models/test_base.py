@@ -110,6 +110,20 @@ class TestBase(unittest.TestCase):
         list_rectangles = Rectangle.load_from_file()
         self.assertEqual(len(list_rectangles), 0)
 
+    def test_load_from_file_square(self):
+        """Test case for load_from_file for square"""
+        s1 = Square(5)
+        s2 = Square(6, 3, 1)
+        Square.save_to_file([s1, s2])
+        list_squares = Square.load_from_file()
+        self.assertEqual(len(list_squares), 2)
+        Square.save_to_file(None)
+        list_squares = Square.load_from_file()
+        self.assertEqual(len(list_squares), 0)
+        Square.save_to_file([])
+        list_squares = Square.load_from_file()
+        self.assertEqual(len(list_squares), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
