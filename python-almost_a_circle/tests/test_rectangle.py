@@ -44,6 +44,9 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_with_non_list_argument(self):
         """Test case for non-list arguments"""
         self.assertRaises(TypeError, Rectangle, 2, "10")
+        self.assertRaises(TypeError, Rectangle, "10", 2)
+        self.assertRaises(TypeError, Rectangle, 10, 2, "5")
+        self.assertRaises(TypeError, Rectangle, 10, 2, 5, "3")
 
     def test_area(self):
         """Test case for area method"""
