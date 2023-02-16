@@ -53,6 +53,11 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(1, 2)
         self.assertEqual(r1.area(), 2)
 
+    def test_str_rectangle(self):
+        """Test case for __str__ method"""
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r1.__str__(), "[Rectangle] (5) 3/4 - 1/2")
+
 
 if __name__ == "__main__":
     unittest.main
