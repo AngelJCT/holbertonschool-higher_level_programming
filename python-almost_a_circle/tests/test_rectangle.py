@@ -67,6 +67,11 @@ class TestRectangle(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             rect.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
+        rect1 = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rect1.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
 
 
 if __name__ == "__main__":
