@@ -2,6 +2,6 @@
 -- first column: id with datatype and set as primary key that will auto-increment with each new record added
 -- second column: name withe length of 256 chars with NOT NULL constraint to ensure that must have a value
 CREATE TABLE IF NOT EXISTS first_table (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(256) NOT NULL,
+    id INT,
+    name VARCHAR(256),
 );
