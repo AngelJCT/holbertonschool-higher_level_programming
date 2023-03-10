@@ -1,7 +1,5 @@
--- create a table force_name
-USE hbtn_0d_2
-
+-- create a table force_name in MySQL server
 CREATE TABLE IF NOT EXISTS force_name (
     id INT,
-    name VARCHAR(256) NOT NULL,
+    name VARCHAR(256) NOT NULL
 );
