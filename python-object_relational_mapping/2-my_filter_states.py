@@ -16,11 +16,10 @@ if __name__ == "__main__":
         port=3306,
         user=username,
         passwd=password,
-        db=database,
-        state=state_name
+        db=database
         )
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '%s' ORDER BY id ASC"
-    cur.execute(query, (state_name))
+    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
+    cur.execute(query, (state_name,))
     for row in cur:
         print(row)
