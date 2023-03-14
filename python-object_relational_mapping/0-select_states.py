@@ -21,7 +21,3 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states ORDER BY id ASC")
     for row in cur:
         print(row)
-
-
-if __name__ == "__main__":
-    connect_to_db()
