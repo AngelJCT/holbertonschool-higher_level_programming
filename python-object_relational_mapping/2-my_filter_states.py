@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module 0-select_states"""
+"""Module 2-my_filter_states"""
 import MySQLdb
 import sys
 
@@ -20,8 +20,7 @@ if __name__ == "__main__":
         state=state_name
         )
     cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name = 'state' ORDER BY id ASC"
-        )
+    query = "SELECT * FROM states WHERE name = '%s' ORDER BY id ASC"
+    cur.execute(query, (state_name))
     for row in cur:
         print(row)
