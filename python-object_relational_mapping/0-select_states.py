@@ -9,7 +9,7 @@ def connect_to_db():
         host="localhost",
         port=3306,
         user="root",
-        passw="root",
+        password="root",
         db="hbtn_0e_0_usa"
         )
     cur = db.cursor()
