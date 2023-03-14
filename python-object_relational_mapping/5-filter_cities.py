@@ -24,8 +24,5 @@ if __name__ == "__main__":
             WHERE states.name = %s\
             ORDER BY cities.id ASC"
     cur.execute(query, (state,))
-    for row in cur:
-        if row[0] == row[-1]:
-            print(row[0])
-        else:
-            print(row[0], end=", ")
+    rows = cur.fetchall()
+    print(", ".join([row[0] for row in rows]))
