@@ -20,7 +20,7 @@ if __name__ == "__main__":
         db=database
         )
     cur = db.cursor()
-    query = f"SELECT * FROM states WHERE name LIKE '{state_name}' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(state_name)
     cur.execute(query)
     for row in cur:
         print(row)
