@@ -3,7 +3,7 @@
 import MySQLdb
 
 
-def connect_to_db(username, password, database_name):
+def connect_to_db():
     """Main function"""
     db = MySQLdb.connect(
         host="localhost",
