@@ -25,4 +25,10 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC"
     cur.execute(query, (state,))
     rows = cur.fetchall()
-    print(", ".join([row[0] for row in rows]))
+    print(", ".join([row[0] for row in rows])) 
+    # the delimiter(comma in this case) is only placed between each element thanks to join() method.
+    # the join() method takes a list of strings(in this case, a list comprehension to create a new list) as an argument and returns a string.
+    # the list comprehension creates a new list of strings from the rows list of tuples.
+    # the list comprehension takes each tuple in the rows list and returns the first element of the tuple.
+    # the list comprehension returns a list of strings.
+    # the string returned is the concatenation of each string in the list with the delimiter placed between each string.
