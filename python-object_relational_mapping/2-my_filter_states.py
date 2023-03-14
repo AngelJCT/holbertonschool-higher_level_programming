@@ -21,6 +21,6 @@ if __name__ == "__main__":
         )
     cur = db.cursor()
     query = f"SELECT * FROM states WHERE name LIKE '{state_name}' ORDER BY id ASC"
-    cur.execute(query, (state_name,))
+    cur.execute(query)
     for row in cur:
         print(row)
