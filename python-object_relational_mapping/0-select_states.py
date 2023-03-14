@@ -1,16 +1,21 @@
 #!/usr/bin/python3
 """Module 0-select_states"""
 import MySQLdb
+import sys
 
 
-def connect_to_db():
+if __name__ == "__main__":
     """Main function"""
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user="root",
-        password="root",
-        db="hbtn_0e_0_usa"
+        user=username,
+        passwd=password,
+        db=database
         )
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
