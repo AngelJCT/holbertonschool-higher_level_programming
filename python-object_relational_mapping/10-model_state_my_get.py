@@ -18,7 +18,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    names = session.query(State.name.like(f"%{state_name}%"))
+    names = session.query(State).filter(State.name == state_name)
     if names:
         print(f"{names.id}")
     else:
