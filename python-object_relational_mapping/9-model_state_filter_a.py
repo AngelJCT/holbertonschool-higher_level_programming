@@ -18,7 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     letter = 'a'
-    state = session.query(State).order_by(State.id).filter(State.name.contains(letter))
+    state = session.query(State).filter(State.name.contains(letter)).order_by(State.id)
     names = state.all()
     for result in names:
         print(f"{result.id}: {result.name}")
