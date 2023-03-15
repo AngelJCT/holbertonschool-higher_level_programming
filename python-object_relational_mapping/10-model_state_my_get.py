@@ -21,7 +21,7 @@ if __name__ == "__main__":
     names = session.query(State).filter(State.name == state_name)
     result = names.all()
     for state in result:
-        if state:
-            print(f"{state.id}")
+        print(state.id)
+    if not result:
         print("Not found")
     session.close()
