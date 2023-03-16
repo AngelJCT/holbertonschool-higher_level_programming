@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module 13-model_delete_a"""
-
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    state = session.query(State).filter(State.name.like("%a%")):
+    state = session.query(State).filter(State.name.like("%a%"))
     session.delete(state)
     session.commit()
     session.close()
