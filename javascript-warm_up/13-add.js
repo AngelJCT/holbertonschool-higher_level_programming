@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 // prints the addition of 2 integers
 // The function must be visible from outside
 // The name of the function must be add
