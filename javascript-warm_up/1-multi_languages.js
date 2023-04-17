@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function multi_languages () {
+function multiLanguages () {
   const myVar1 = 'C is fun';
   const myVar2 = 'Python is cool';
   const myVar3 = 'JavaScript is amazing';
@@ -7,4 +7,4 @@ function multi_languages () {
   console.log(myVar2);
   console.log(myVar3);
 }
-multi_languages();
+multiLanguages();
