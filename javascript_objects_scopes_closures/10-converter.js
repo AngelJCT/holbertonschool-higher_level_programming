@@ -4,4 +4,4 @@ exports.converter = function (base) {
   return function (num) { // returns another function which takes 'num' as argument
     return num.toString(base); // inner function that uses 'toString' method to convert the number to a string representation in the specified base
   };
-}
+};
