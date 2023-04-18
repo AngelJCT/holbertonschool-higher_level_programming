@@ -6,36 +6,36 @@
 // The width and height of the rectangle are based on the integer passed as parameters
 
 class Rectangle {
-    constructor (w, h) {
-      if (w <= 0 || h <= 0 || w === undefined || h === undefined) {
-        return;
-      }
-      this.width = w;
-      this.height = h;
+  constructor (w, h) {
+    if (w <= 0 || h <= 0 || w === undefined || h === undefined) {
+      return;
     }
-  
-    print () {
-      let output = '';
-      for (let i = 0; i < this.height; i++) {
-        for (let j = 0; j < this.width; j++) {
-          output += 'X';
-        }
-        if (i < this.height - 1) {
-          output += '\n';
-        }
-      }
-      console.log(output);
-    }
-
-    rotate () {
-      let temp = this.width;
-      this.width = this.height;
-      this.height = temp;
-    }
-
-    double () {
-      this.width *= 2;
-      this.height *= 2;
-    }
+    this.width = w;
+    this.height = h;
   }
-  module.exports = Rectangle;
+
+  print () {
+    let output = '';
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+        output += 'X';
+      }
+      if (i < this.height - 1) {
+        output += '\n';
+      }
+    }
+    console.log(output);
+  }
+
+  rotate () {
+    let temp = this.width;
+    this.width = this.height;
+    this.height = temp;
+  }
+
+  double () {
+    this.width *= 2;
+    this.height *= 2;
+  }
+}
+module.exports = Rectangle;
