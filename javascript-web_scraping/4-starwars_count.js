@@ -3,19 +3,20 @@
 const request = require('request');
 const url = 'https://swapi-api.hbtn.io/api/films/';
 const characterId = '18';
-const characterUrl = 'https://swapi-api.hbtn.io/api/people/' + characterId;
 
 request.get(url, (error, response, body) => {
   if (error) {
     console.error(error);
     return;
   }
-  const films = JSON.parse(body).results;
+  const films = JSON.parse(body).results; // parse the JSON response to get the list of films
   let count = 0;
-  for (const film of films) {
-    if (film.characters.includes(characterUrl)) {
-      count++;
-    }
-  }
+  films.forEach(film => { // iterate through each film in the films array
+    film.characters.forEach(character => { // for each film, iterate through the characters in the film
+      if (character.includes(characterId)) { // if the character match the id, add to count
+        count++;
+      }
+    });
+  });
   console.log(count);
 });
