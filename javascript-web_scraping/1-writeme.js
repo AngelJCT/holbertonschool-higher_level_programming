@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 // write a script that writes a string to a file
 const fs = require('fs');
 const file = process.argv[2];
