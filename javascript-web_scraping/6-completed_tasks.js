@@ -17,7 +17,6 @@ request.get(url, (error, response, body) => {
         completedTasks[task.userId]++;
       }
     }
-  }
-  );
+  });
   console.log(completedTasks);
 });
