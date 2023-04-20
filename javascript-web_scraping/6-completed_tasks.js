@@ -7,7 +7,7 @@ request.get(url, (error, response, body) => {
     console.error(error);
     return;
   }
-  const tasks = JSON.parse(body).results;
+  const tasks = JSON.parse(body);
   const completedTasks = {};
   tasks.forEach(task => {
     if (task.completed === true) {
